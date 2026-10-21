@@ -1,0 +1,127 @@
+:root {
+  --font-display: 'Space Grotesk', -apple-system, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Modern Neo-Brutalist Color Palette (STRICTLY NO YELLOW) */
+  --nb-bg: #090b10;
+  --nb-bg-surface: #121620;
+  --nb-bg-elevated: #1a202c;
+  --nb-bg-subtle: #161b26;
+
+  /* Bold Neo-Brutalist Electric Accents */
+  --nb-cyan: #00f0ff;
+  --nb-cyan-hover: #33f3ff;
+  --nb-cyan-dim: rgba(0, 240, 255, 0.15);
+
+  --nb-purple: #9d4edd;
+  --nb-purple-light: #c77dff;
+  --nb-purple-dim: rgba(157, 78, 221, 0.15);
+
+  --nb-pink: #ff2a6d;
+  --nb-pink-dim: rgba(255, 42, 109, 0.15);
+
+  --nb-blue: #05d9e8;
+  --nb-cobalt: #0056b3;
+  --nb-docx: #2563eb;
+  --nb-docx-dim: rgba(37, 99, 235, 0.18);
+
+  --nb-pdf: #ff3366;
+  --nb-pdf-dim: rgba(255, 51, 102, 0.18);
+
+  --nb-emerald: #00f5a0;
+  --nb-emerald-dim: rgba(0, 245, 160, 0.15);
+
+  --nb-ink: #000000;
+  --nb-border: #2d3748;
+  --nb-border-dark: #000000;
+  --nb-border-cyan: #00f0ff;
+
+  --text-main: #f8fafc;
+  --text-dim: #94a3b8;
+  --text-muted: #64748b;
+  --text-ink: #000000;
+
+  /* Neo-Brutalist Hard Shadows */
+  --shadow-neo-sm: 2px 2px 0px #000000;
+  --shadow-neo: 4px 4px 0px #000000;
+  --shadow-neo-lg: 6px 6px 0px #000000;
+  --shadow-neo-cyan: 4px 4px 0px var(--nb-cyan);
+  --shadow-neo-purple: 4px 4px 0px var(--nb-purple);
+  --shadow-neo-pink: 4px 4px 0px var(--nb-pink);
+  --shadow-neo-emerald: 4px 4px 0px var(--nb-emerald);
+
+  /* Geometry */
+  --radius-sharp: 0px;
+  --radius-neo-sm: 4px;
+  --radius-neo: 8px;
+  --radius-neo-pill: 999px;
+
+  --border-thick: 2px solid #000000;
+  --border-card: 2px solid #232a3b;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--nb-bg);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Neo-Brutalist Geometric Grid Background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to right, rgba(0, 240, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(157, 78, 221, 0.02) 1px, transparent 1px);
+  background-size: 24px 24px, 48px 48px, 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Neo-Brutalist Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--nb-bg-surface);
+  border-left: 2px solid var(--nb-ink);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--nb-cyan);
+  border: 2px solid var(--nb-ink);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--nb-purple);
+}
+
+/* Keyboard accessibility outline */
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--nb-cyan);
+  outline-offset: 2px;
+}
